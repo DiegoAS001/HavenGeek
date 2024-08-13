@@ -7,5 +7,5 @@
 *.class
 
 # ignorar a pasta build (binários) do projeto
-build/*
+/build/
 /dist/
