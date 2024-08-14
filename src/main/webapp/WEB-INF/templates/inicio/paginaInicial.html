@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haven Geek</title>
     <link rel="stylesheet" th:href="@{/css/estilizacaoPaginaInicial.css}">
+    
 </head>
 <body>
     <div class="container">
@@ -12,8 +13,8 @@
         <p>Bem-vindo ao Haven Geek! Seu portal para os melhores acessórios e jogos.</p>
         <nav>
             <ul>
-                <li><a href="cadastro_acessorios.html">Cadastro de Acessórios</a></li>
-                <li><a href="cadastro_jogos.html">Cadastro de Jogos</a></li>
+                <li><a th:href="listarAcessorio.html">Cadastro de Acessórios</a></li>
+                <li><a th:href="listarJogo.html">Cadastro de Jogos</a></li>
             </ul>
         </nav>
     </div>
