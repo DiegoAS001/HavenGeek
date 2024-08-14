@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Acessórios</title>
+    <link rel="stylesheet" th:href="@{/css/estilizacaoAcessorio.css}">
+</head>
+<body>
+<h1>Acessórios</h1>
+
+<div class="flash" th:if="${msg}">
+    <span th:text="${msg}"></span>
+</div>
+<p>
+    <a th:href="@{/carrinho/visualizar}">Visualizar carrinho</a>
+    <span th:if="${session.carrinho.vazio}"> (vazio)</span>
+</p>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Imagem</th>
+        <th colspan="2"></th>
+    </tr>
+    
+    <tr th:each="acessorio: ${acessorios}">
+        <td th:text="${acessorio.id}">1</td>
+        <td th:text="${acessorio.descricao}">Descrição do acessório</td>
+        <td th:text="${#numbers.formatCurrency(acessorio.preco)}" class="monetario">0.00</td>
+        <td>
+            <img th:src="@{/images/acessorios/} + ${acessorio.id} + '.jpg'" alt="Imagem do acessório" width="100">
+        </td>
+     
+        <td>
+            <span class="operacao"><a href="#" th:onClick="adicionarCarrinho([[${acessorio.id}]]);">Adicionar ao carrinho</a></span>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

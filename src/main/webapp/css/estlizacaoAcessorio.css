@@ -1,0 +1,61 @@
+/*estilizacaoAcessorio */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+table caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+table {
+    border: 1px solid #ddd;
+}
+
+td, th {
+    padding: 8px;
+}
+
+td:focus, th:focus {
+    outline: 2px solid #007bff;
+}
+
+td {
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    overflow-x: auto;
+}
