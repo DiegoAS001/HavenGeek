@@ -1,6 +1,6 @@
 package edu.ifsp.dwi.modelo;
 
-public class Acessorio {
+public class Acessorio extends Entity {
 	
 	private String descricao;
 	private Double preco;

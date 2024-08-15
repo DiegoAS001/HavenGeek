@@ -1,6 +1,6 @@
 package edu.ifsp.dwi.modelo;
 
-public class Cliente {
+public class Cliente extends Entity {
 	
 	private String nome;
 	private String email;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Venda {
+public class Venda extends Entity {
 	private List<Carrinho> vendas = new ArrayList<>();
 
 	public List<Carrinho> getCarrinho() {

@@ -1,6 +1,6 @@
 package edu.ifsp.dwi.modelo;
 
-public class Jogo {
+public class Jogo extends Entity {
 
 	private String nome;
 	private String midia;

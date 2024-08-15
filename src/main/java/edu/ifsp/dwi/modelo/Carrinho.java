@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Carrinho {
+public class Carrinho extends Entity {
 	
 	/*LEMBRAR DE IMPLEMENTAR 
 	 * 
