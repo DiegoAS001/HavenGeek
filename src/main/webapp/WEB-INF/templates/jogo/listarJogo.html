@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Jogos</title>
-    <link rel="stylesheet" th:href="@{/css/common.css}">
-    <script th:src="@{/js/carrinho.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/estilizacaoAcessorio.css}">
 </head>
 <body>
 <h1>Jogos Disponíveis</h1>
-
-<div class="flash" th:if="${msg}">
-    <span th:text="${msg}"></span>
-</div>
-<p>
-    <a th:href="@{/carrinho/visualizar}">Visualizar carrinho</a>
-    <span th:if="${session.carrinho.vazio}"> (vazio)</span>
-</p>
 
 <table>
     <tr>
@@ -26,7 +17,6 @@
         <th>Tipo de Mídia</th>
         <th>Preço</th>
         <th>Imagem</th>
-        <th colspan="2"></th>
     </tr>
     
     <tr th:each="jogo: ${jogos}">
@@ -36,7 +26,7 @@
         <td th:text="${jogo.plataforma}">Plataforma</td>
         <td th:text="${jogo.tipoMidia}">Mídia</td>
         <td th:text="${#numbers.formatCurrency(jogo.preco)}" class="monetario">0.00</td>
-        <td><img th:src="@{/images/jogos/[[${jogo.id}]]}.jpg" alt="Imagem do Jogo" /></td>
+        <td><img th:src="@{/images/[[${jogo.id}]]}.png" alt="Imagem do Jogo" /></td>
       
         <td>
             <span class="operacao"><a href="#" th:onClick="adicionarCarrinho([[${jogo.id}]]);">Adicionar ao carrinho</a></span>

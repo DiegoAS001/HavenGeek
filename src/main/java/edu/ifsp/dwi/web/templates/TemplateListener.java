@@ -1,4 +1,4 @@
-package edu.ifsp.web.templates;
+package edu.ifsp.dwi.web.templates;
 
 import java.util.logging.Logger;
 
