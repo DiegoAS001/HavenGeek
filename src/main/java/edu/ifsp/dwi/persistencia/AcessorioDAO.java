@@ -11,7 +11,15 @@ import java.util.List;
 import edu.ifsp.dwi.modelo.Acessorio;
 
 
+
 public class AcessorioDAO {
+	
+	/*
+	 * FALTA FINDBYID
+	 * FALTA O FINDALL
+	 * */
+	
+	
 	
 	public Acessorio salvar(Acessorio acessorio){
 		
@@ -33,7 +41,7 @@ public class AcessorioDAO {
 					"INSERT INTO acessorio(descricao, preco) values (?,?);", Statement.RETURN_GENERATED_KEYS);
 			
 			ps.setString(1, acessorio.getDescricao());
-			ps.setDouble(1, acessorio.getPreco());
+			ps.setDouble(2, acessorio.getPreco());
 			ps.execute();
 			
 			ResultSet rs = ps.getGeneratedKeys();
@@ -67,6 +75,17 @@ public class AcessorioDAO {
 		
 	}
 	
+	public void delete(Acessorio acessorio)  {
+		try (Connection conn = DatabaseConnector.connect()) {
+			
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM acessorio WHERE id = ?;");
+			ps.setInt(1, acessorio.getId());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+		}
+	}
 	
 	
 }
