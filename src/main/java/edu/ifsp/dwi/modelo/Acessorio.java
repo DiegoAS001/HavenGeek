@@ -21,5 +21,4 @@ public class Acessorio extends Entity {
 		this.preco = preco;
 	}
 	
-	
 }

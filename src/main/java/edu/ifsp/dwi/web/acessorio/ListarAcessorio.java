@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.ifsp.dwi.persistencia.AcessorioDAO;
 import edu.ifsp.dwi.web.templates.Template;
 
 @WebServlet("/ListarAcessorio")
@@ -21,8 +22,9 @@ public class ListarAcessorio extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+			AcessorioDAO dao = new AcessorioDAO();
+			
 	}
 
 }
