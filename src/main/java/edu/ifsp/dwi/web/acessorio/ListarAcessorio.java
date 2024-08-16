@@ -22,7 +22,7 @@ public class ListarAcessorio implements Command {
 		AcessorioDAO dao = new AcessorioDAO();
 		List<Acessorio> acessorios = dao.listarTodos();
 		request.setAttribute("acessorios", acessorios);
-		Template.render("produto/listar", request, response);		
+		Template.render("acessorio/listarAcessorio", request, response);		
 	}
 
 }

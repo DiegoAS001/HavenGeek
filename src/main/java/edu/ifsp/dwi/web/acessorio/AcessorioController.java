@@ -15,7 +15,7 @@ import edu.ifsp.dwi.web.ControllerHelper;
 /**
  * Servlet implementation class AcessorioController
  */
-@WebServlet("/AcessorioController")
+@WebServlet("/acessorio/*")
 
 public class AcessorioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -48,7 +48,7 @@ public class AcessorioController extends HttpServlet {
 		
 		Command cmd = null;
 		switch (operation) {
-			case "/produto/listar":
+			case "/acessorio/listarAcessorio":
 				cmd = new ListarAcessorio();
 				break;
 		}

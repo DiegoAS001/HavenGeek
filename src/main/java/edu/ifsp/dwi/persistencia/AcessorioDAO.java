@@ -126,7 +126,7 @@ public class AcessorioDAO {
 	private Acessorio mapearLinha(ResultSet rs) throws SQLException {
 		Acessorio acessorio = new Acessorio();
 		
-		acessorio.setId(rs.getInt("id_acessorio"));
+		acessorio.setId(rs.getInt("id"));
 		acessorio.setDescricao(rs.getString("descricao"));
 		acessorio.setPreco(rs.getDouble("preco"));
 		
