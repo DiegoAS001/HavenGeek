@@ -14,9 +14,9 @@
         <th>Descrição</th>
         <th>Preço</th>
         <th>Imagem</th>
-    </tr>
-    
-    <tr th:each="acessorio: ${acessorios}">
+    </tr>       
+        
+        <tr th:each="acessorio: ${acessorios}">
         <td th:text="${acessorio.id}">1</td>
         <td th:text="${acessorio.descricao}">Descrição do acessório</td>
         <td th:text="${#numbers.formatCurrency(acessorio.preco)}" class="monetario">0.00</td>
@@ -27,6 +27,8 @@
         <td>
             <span class="operacao"><a href="#" th:onClick="adicionarCarrinho([[${acessorio.id}]]);">Adicionar ao carrinho</a></span>
         </td>
+        
+        
     </tr>
 </table>
 
