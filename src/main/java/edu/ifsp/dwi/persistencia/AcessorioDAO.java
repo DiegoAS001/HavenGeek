@@ -14,11 +14,6 @@ import edu.ifsp.dwi.modelo.Acessorio;
 
 public class AcessorioDAO {
 	
-	/*
-	 * FALTA FINDBYID
-	 * 
-	 * */
-	
 	public List<Acessorio> listarTodos(){
 		List<Acessorio> acessorios = new ArrayList<Acessorio>();
 		
@@ -74,6 +69,18 @@ public class AcessorioDAO {
 		
 	}
 	
+	public void delete(Acessorio acessorio)  {
+		try (Connection conn = DatabaseConnector.connect()) {
+			
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM acessorio WHERE id = ?;");
+			ps.setInt(1, acessorio.getId());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+		}
+	}
+	
 	private void insert(Acessorio acessorio) {
 		
 		try(Connection conn = DatabaseConnector.connect()) {
@@ -124,19 +131,6 @@ public class AcessorioDAO {
 		acessorio.setPreco(rs.getDouble("preco"));
 		
 		return acessorio;		
-	}
-	
-	public void delete(Acessorio acessorio)  {
-		try (Connection conn = DatabaseConnector.connect()) {
-			
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM acessorio WHERE id = ?;");
-			ps.setInt(1, acessorio.getId());
-			ps.executeUpdate();
-			
-		} catch (SQLException e) {
-			
-		}
-	}
-	
+	}	
 	
 }
