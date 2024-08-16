@@ -16,10 +16,51 @@ public class AcessorioDAO {
 	
 	/*
 	 * FALTA FINDBYID
-	 * FALTA O FINDALL
+	 * 
 	 * */
 	
+	public List<Acessorio> listarTodos(){
+		List<Acessorio> acessorios = new ArrayList<Acessorio>();
+		
+		try (Connection conn = DatabaseConnector.connect()) {
+			
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(
+					"SELECT id, descricao, preco FROM acessorio;");
+			
+			while(rs.next()) {
+				Acessorio acessorio = mapearLinha(rs);
+				acessorios.add(acessorio);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return acessorios;
+	}
 	
+	public Acessorio buscarPeloId(int id) {
+		Acessorio acessorio = null;
+		
+		try (Connection conn = DatabaseConnector.connect()) {
+			
+			PreparedStatement ps = conn.prepareStatement(
+					"SELECT id, descricao, preco FROM acessorio WHERE id = ?;");
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				acessorio = mapearLinha(rs);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return acessorio;
+	}
 	
 	public Acessorio salvar(Acessorio acessorio){
 		
@@ -73,6 +114,16 @@ public class AcessorioDAO {
 				ex.printStackTrace();
 			}		
 		
+	}
+	
+	private Acessorio mapearLinha(ResultSet rs) throws SQLException {
+		Acessorio acessorio = new Acessorio();
+		
+		acessorio.setId(rs.getInt("id_acessorio"));
+		acessorio.setDescricao(rs.getString("descricao"));
+		acessorio.setPreco(rs.getDouble("preco"));
+		
+		return acessorio;		
 	}
 	
 	public void delete(Acessorio acessorio)  {
