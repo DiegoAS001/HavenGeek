@@ -77,7 +77,7 @@ public class AcessorioDAO {
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
-			
+			e.printStackTrace();
 		}
 	}
 	

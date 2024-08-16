@@ -4,7 +4,7 @@ public class Cliente extends Entity {
 	
 	private String nome;
 	private String email;
-	private String endereço;
+	private String endereco;
 	private String username;
 	
 	public String getNome() {
@@ -23,12 +23,12 @@ public class Cliente extends Entity {
 		this.email = email;
 	}
 	
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 	
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 	
 	public String getUsername() {

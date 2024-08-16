@@ -76,7 +76,7 @@ public class JogoDAO {
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
-			
+			e.printStackTrace();
 		}
 	}
 	
