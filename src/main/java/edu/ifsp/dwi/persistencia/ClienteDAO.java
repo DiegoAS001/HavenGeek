@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.ifsp.dwi.modelo.Cliente;
-import edu.ifsp.dwi.modelo.Jogo;
 
 public class ClienteDAO {
 	
