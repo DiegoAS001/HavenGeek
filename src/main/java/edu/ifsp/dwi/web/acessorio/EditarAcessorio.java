@@ -1,11 +1,14 @@
 package edu.ifsp.dwi.web.acessorio;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+=======
+>>>>>>> b145587 (Resolveno o erro no JogoController)
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

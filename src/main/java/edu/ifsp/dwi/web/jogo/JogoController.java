@@ -9,13 +9,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
+=======
+
+>>>>>>> b145587 (Resolveno o erro no JogoController)
 import edu.ifsp.dwi.web.Command;
 import edu.ifsp.dwi.web.ControllerHelper;
 
 /**
  * Servlet implementation class AcessorioController
  */
+<<<<<<< HEAD
 @WebServlet("/acessorio/*")
+=======
+@WebServlet("/jogo/*")
+>>>>>>> b145587 (Resolveno o erro no JogoController)
 
 public class JogoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -48,11 +56,19 @@ public class JogoController extends HttpServlet {
 		
 		Command cmd = null;
 		switch (operation) {
+<<<<<<< HEAD
 			case "/acessorio/listarAcessorio":
 				cmd = new ListarJogo();
 				break;
 				
 			case "/acessorio/editarAcessorio":
+=======
+			case "/jogo/listarJogo":
+				cmd = new ListarJogo();
+				break;
+				
+			case "/jogo/editarJogo":
+>>>>>>> b145587 (Resolveno o erro no JogoController)
 				cmd = new EditarJogo();
 				break;
 		}
@@ -60,4 +76,8 @@ public class JogoController extends HttpServlet {
 		return cmd;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b145587 (Resolveno o erro no JogoController)
