@@ -3,7 +3,7 @@ package edu.ifsp.dwi.modelo;
 public class Jogo extends Entity {
 
 	private String nome;
-	private String tipo_midia;
+	private String tipoMidia;
 	private Double preco;
 	private String categoria;
 	private String plataforma;
@@ -17,11 +17,11 @@ public class Jogo extends Entity {
 	}
 	
 	public String getTipoMidia() {
-		return tipo_midia;
+		return tipoMidia;
 	}
 	
 	public void setTipoMidia(String midia) {
-		this.tipo_midia = midia;
+		this.tipoMidia = midia;
 	}
 	
 	public Double getPreco() {
