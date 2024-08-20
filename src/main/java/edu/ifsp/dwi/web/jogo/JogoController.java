@@ -1,4 +1,4 @@
-package edu.ifsp.dwi.web.acessorio;
+package edu.ifsp.dwi.web.jogo;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,7 +17,7 @@ import edu.ifsp.dwi.web.ControllerHelper;
  */
 @WebServlet("/acessorio/*")
 
-public class AcessorioController extends HttpServlet {
+public class JogoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,11 +49,11 @@ public class AcessorioController extends HttpServlet {
 		Command cmd = null;
 		switch (operation) {
 			case "/acessorio/listarAcessorio":
-				cmd = new ListarAcessorio();
+				cmd = new ListarJogo();
 				break;
 				
 			case "/acessorio/editarAcessorio":
-				cmd = new EditarAcessorio();
+				cmd = new EditarJogo();
 				break;
 		}
 		

@@ -23,6 +23,9 @@
         <td>
             <img th:src="@{/images/acessorios/} + ${acessorio.id} + '.png'" alt="Imagem do acessório" width="100">
         </td>
+        <td>
+			<span class="operacao"><a th:href="|editarAcessorio?id=${acessorio.id}|">Editar</a></span>
+		</td>
      
         <td>
             <span class="operacao"><a href="#" th:onClick="adicionarCarrinho([[${acessorio.id}]]);">Adicionar ao carrinho</a></span>

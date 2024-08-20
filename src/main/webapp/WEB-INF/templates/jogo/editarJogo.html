@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Acessorios</title>
+	<link rel="stylesheet" th:href="@{/css/estilizacaoAcessorio.css}">
+	
+</head>
+<body>
+<h1>Acessorio</h1>
+
+	<form method="post" th:action="@{/jogo/editarJogo}">
+		<p>
+			<label>Código: </label>
+			<span th:unless="${jogo.isNew()}" th:text="${jogo.id}"></span>
+		</p>
+		
+		<p>
+			<label for="nome">Nome: </label>
+			<input type="text" name="nome" id="nome" th:value="${jogo.nome}" required>
+		</p>
+		<p>
+			<label for="tipo_midia">Tipo de Midia: </label>
+			<input type="text" name="tipo_midia" id="tipo_midia" th:value="${jogo.tipo_midia}" required>
+		</p>
+
+		<p>
+			<label for="preco">Preço: </label>
+			<input type="number" name="preco" id="preco" th:value="${jogo.preco}" step="0.10" min="0" required>
+		</p>
+		
+		<p>
+			<label for="categoria">Categoria: </label>
+			<input type="text" name="categoria" id="categoria" th:value="${jogo.categoria}" required>
+		</p>
+		
+		<p>
+			<label for="plataforma">Plataforma: </label>
+			<input type="text" name="plataforma" id="plataforma" th:value="${jogo.plataforma}" required>
+		</p>
+		
+		<button type="submit">Enviar</button>
+	</form>
+
+</body>
+</html>
+
+
+
+
