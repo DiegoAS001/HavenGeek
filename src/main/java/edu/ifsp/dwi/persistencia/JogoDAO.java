@@ -40,7 +40,7 @@ public class JogoDAO {
 		try (Connection conn = DatabaseConnector.connect()) {
 			
 			PreparedStatement ps = conn.prepareStatement(
-					"SELECT id, nome, tipo_midia, preco, categoria, plataforma FROM acessorio WHERE id = ?;");
+					"SELECT id, nome, tipo_midia, preco, categoria, plataforma FROM jogo WHERE id = ?;");
 			ps.setInt(1, id);
 			
 			ResultSet rs = ps.executeQuery();

@@ -28,8 +28,12 @@
         <td th:text="${jogo.tipoMidia}">Mídia</td>
         <td th:text="${#numbers.formatCurrency(jogo.preco)}" class="monetario">0.00</td>
         <td><img th:src="@{/images/${jogo.id}.png}" alt="Imagem do Jogo" /></td>
+        
         <td>
-            <span class="operacao"><a th:href="|editarJogo?id=${jogo.id}|">Editar</a></span>
+			 <span class="operacao"><a th:href="|editarJogo?id=${jogo.id}|">Editar</a></span>
+		</td>
+     
+        <td>
             <span class="operacao"><a href="#" th:attr="onclick='adicionarCarrinho(${jogo.id});'">Adicionar ao carrinho</a></span>
         </td>
     </tr>
