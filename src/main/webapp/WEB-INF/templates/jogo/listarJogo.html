@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogos</title>
+    <link rel="stylesheet" th:href="@{/css/estilizacaoAcessorio.css}">
+</head>
+<body>
+<h1>Jogos Disponíveis</h1>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Plataforma</th>
+        <th>Tipo de Mídia</th>
+        <th>Preço</th>
+        <th>Imagem</th>
+        <th>Ações</th>
+    </tr>
+    
+    <tr th:each="jogo : ${jogos}">
+        <td th:text="${jogo.id}">1</td>
+        <td th:text="${jogo.nome}">Nome do Jogo</td>
+        <td th:text="${jogo.categoria}">Categoria</td>
+        <td th:text="${jogo.plataforma}">Plataforma</td>
+        <td th:text="${jogo.tipoMidia}">Mídia</td>
+        <td th:text="${#numbers.formatCurrency(jogo.preco)}" class="monetario">0.00</td>
+        <td><img th:src="@{/images/${jogo.id}.png}" alt="Imagem do Jogo" /></td>
+        
+        <td>
+			 <span class="operacao"><a th:href="|editarJogo?id=${jogo.id}|">Editar</a></span>
+		</td>
+     
+        <td>
+            <span class="operacao"><a href="#" th:attr="onclick='adicionarCarrinho(${jogo.id});'">Adicionar ao carrinho</a></span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

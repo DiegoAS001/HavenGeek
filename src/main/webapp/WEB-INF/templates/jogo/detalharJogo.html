@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/estilizacaoAcessorio.css}">
+</head>
+<body>
+<h1>Jogo</h1>
+
+	<p>
+		<label>Código: </label>
+		<span th:text="${jogo.id}"></span>
+	</p>
+		
+	<p>
+		<label for="nome">Nome: </label>
+		<span th:text="${jogo.nome}"></span>
+	</p>
+	
+	<p>
+		<label for="tipo_midia">Tipo de Midia: </label>
+		<span th:text="${jogo.tipoMidia}"></span>
+	</p>
+
+	<p>
+		<label for="preco">Preço: </label>
+		<span th:text="${#numbers.formatCurrency(jogo.preco)}"></span>
+	</p>
+		
+	<p>
+		<label for="categoria">Categoria: </label>
+		<span th:text="${jogo.categoria}"></span>
+	</p>
+		
+	<p>
+		<label for="plataforma">Plataforma: </label>
+		<span th:text="${jogo.plataforma}"></span>
+	</p>
+
+</body>
+</html>

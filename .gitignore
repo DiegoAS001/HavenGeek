@@ -1,0 +1,11 @@
+#ignorar os arquivos de extensão .bak
+
+*.bak
+
+#ignorar os arquivos de extensão .class
+
+*.class
+
+# ignorar a pasta build (binários) do projeto
+/build/
+/dist/
