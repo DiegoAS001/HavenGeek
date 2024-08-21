@@ -33,8 +33,11 @@ use HavenGeek;
         ID_CLIENTE INT NOT NULL REFERENCES CLIENTE(ID),
         ID_JOGO INT REFERENCES JOGO(ID),
         ID_ACESSORIO INT REFERENCES ACESSORIO(ID),
+<<<<<<< HEAD
         ID_JOGO INT REFERENCES JOGO(ID),
         ID_ACESSORIO INT REFERENCES ACESSORIO(ID),
+=======
+>>>>>>> 3968309 (Criando a classe CarrinhoDAO, ListarCarrinho, CarrinhoController, listarCarrinho.html (falta terminar o mapearlinha do CarrinhoDAO))
         PRIMARY KEY (ID) 
 );
 

@@ -2,7 +2,15 @@ package edu.ifsp.dwi.persistencia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> 3968309 (Criando a classe CarrinhoDAO, ListarCarrinho, CarrinhoController, listarCarrinho.html (falta terminar o mapearlinha do CarrinhoDAO))
 
 import edu.ifsp.dwi.modelo.Acessorio;
 import edu.ifsp.dwi.modelo.Carrinho;
@@ -44,4 +52,38 @@ public class CarrinhoDAO {
 
         return carrinho;
     }
+<<<<<<< HEAD
+=======
+	
+	public List<Carrinho> listarTodos(){
+		List<Carrinho> carrinhos = new ArrayList<Carrinho>();
+		
+		try (Connection conn = DatabaseConnector.connect()) {
+			
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(
+					"SELECT id, id_cliente, id_jogo, id_acesorio FROM carrinho;");
+			
+			while(rs.next()) {
+				Carrinho carrinho = mapearLinha(rs);
+				carrinhos.add(carrinho);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return carrinhos;
+	}
+	
+	
+	private Carrinho mapearLinha(ResultSet rs) throws SQLException {
+		Carrinho carrinho = new Carrinho();
+		
+		carrinho.setId(rs.getInt("id"));
+		
+		return carrinho;		
+	}	
+	
+>>>>>>> 3968309 (Criando a classe CarrinhoDAO, ListarCarrinho, CarrinhoController, listarCarrinho.html (falta terminar o mapearlinha do CarrinhoDAO))
 }

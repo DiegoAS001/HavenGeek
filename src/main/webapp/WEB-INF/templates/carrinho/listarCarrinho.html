@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Carrinhos</title>
+    <link rel="stylesheet" th:href="@{/css/estilizacaoCarrinho.css}">
+</head>
+<body>
+<h1>Lista de Carrinhos</h1>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Cliente</th>
+        <th>Jogos</th>
+        <th>Acessórios</th>
+        <th>Ações</th>
+    </tr>
+
+    <tr th:each="carrinho : ${carrinhos}">
+        <td th:text="${carrinho.id}">1</td>
+        <td th:text="${carrinho.cliente.nome}">Nome do Cliente</td>
+        <td>
+            <ul>
+                <li th:each="jogo : ${carrinho.jogos}" th:text="${jogo.nome}">Nome do Jogo</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li th:each="acessorio : ${carrinho.acessorios}" th:text="${acessorio.nome}">Nome do Acessório</li>
+            </ul>
+        </td>
+        <td>
+            <!-- Formulário para editar o carrinho -->
+            <form th:action="@{/editarCarrinho}" method="get" style="display:inline;">
+                <input type="hidden" name="id" th:value="${carrinho.id}" />
+                <button type="submit">Editar</button>
+            </form>
+
+            <!-- Formulário para remover um carrinho -->
+            <form th:action="@{/removerCarrinho}" method="post" style="display:inline;">
+                <input type="hidden" name="id" th:value="${carrinho.id}" />
+                <button type="submit">Remover</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<!-- Formulário para apagar todos os itens do carrinho -->
+<form th:action="@{/apagarTodosCarrinhos}" method="post">
+    <button type="submit">Apagar Todos os Carrinhos</button>
+</form>
+
+</body>
+</html>
+
