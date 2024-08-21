@@ -54,8 +54,16 @@ public class JogoController extends HttpServlet {
 				cmd = new ListarJogo();
 				break;
 				
+			case "/jogo/recuperar":
+				cmd = new RecuperarJogo();
+				break;
+				
 			case "/jogo/editarJogo":
 				cmd = new EditarJogo();
+				break;
+				
+			case "/jogo/salvarJogo":
+				cmd = new SalvarJogo();
 				break;
 		}
 		

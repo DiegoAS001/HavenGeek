@@ -2,7 +2,6 @@ package edu.ifsp.dwi.web.jogo;
 
 
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,13 +10,11 @@ import edu.ifsp.dwi.persistencia.JogoDAO;
 import edu.ifsp.dwi.web.Command;
 import edu.ifsp.dwi.web.templates.Template;
 
-@WebServlet("/SalvarJogo")
 
 public class SalvarJogo implements Command {
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
 		
 		Jogo jogo = new Jogo();
 		/*if (!validate(request)) {
@@ -40,8 +37,15 @@ public class SalvarJogo implements Command {
 		dao.salvar(jogo);
 		response.sendRedirect("recuperar?id=" + jogo.getId());	
 		
-		Template.render("jogo/listarJogo", request, response);	
+		//Template.render("jogo/listarJogo", request, response);	
 	}
-  
+	
+	private boolean validar(HttpServletRequest request) {
+		boolean validacao = true;
+		
+		
+		
+		return validacao;
+	}
 
 }

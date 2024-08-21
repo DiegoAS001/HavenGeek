@@ -7,7 +7,12 @@ public class ControllerHelper {
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		int pos = uri.indexOf(contextPath) + contextPath.length();
-		String op = uri.substring(pos);		
+		String op = uri.substring(pos);	
+		
+		System.out.println("URI: " + uri);
+		System.out.println("contextPath: " + contextPath);
+		System.out.println("URI position: " + op);
+		
 		return op;
 	}
 }

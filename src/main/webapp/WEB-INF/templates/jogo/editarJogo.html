@@ -9,7 +9,7 @@
 <body>
 <h1>Jogo</h1>
 
-	<form method="post" th:action="@{/jogo/editarJogo}">
+	<form method="post" th:action="@{/jogo/salvarJogo}">
 		<p>
 			<label>Código: </label>
 			<span th:unless="${jogo.isNew()}" th:text="${jogo.id}"></span>
