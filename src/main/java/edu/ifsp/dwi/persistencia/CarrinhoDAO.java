@@ -2,15 +2,11 @@ package edu.ifsp.dwi.persistencia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-<<<<<<< HEAD
-import java.sql.SQLException;
-=======
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> 3968309 (Criando a classe CarrinhoDAO, ListarCarrinho, CarrinhoController, listarCarrinho.html (falta terminar o mapearlinha do CarrinhoDAO))
 
 import edu.ifsp.dwi.modelo.Acessorio;
 import edu.ifsp.dwi.modelo.Carrinho;
@@ -52,8 +48,6 @@ public class CarrinhoDAO {
 
         return carrinho;
     }
-<<<<<<< HEAD
-=======
 	
 	public List<Carrinho> listarTodos(){
 		List<Carrinho> carrinhos = new ArrayList<Carrinho>();
@@ -84,6 +78,4 @@ public class CarrinhoDAO {
 		
 		return carrinho;		
 	}	
-	
->>>>>>> 3968309 (Criando a classe CarrinhoDAO, ListarCarrinho, CarrinhoController, listarCarrinho.html (falta terminar o mapearlinha do CarrinhoDAO))
 }

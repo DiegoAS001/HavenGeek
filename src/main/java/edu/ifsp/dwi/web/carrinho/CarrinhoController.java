@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import edu.ifsp.dwi.web.Command;
 import edu.ifsp.dwi.web.ControllerHelper;
-import edu.ifsp.dwi.web.jogo.EditarJogo;
-import edu.ifsp.dwi.web.jogo.ListarJogo;
-import edu.ifsp.dwi.web.jogo.RecuperarJogo;
-import edu.ifsp.dwi.web.jogo.SalvarJogo;
 
 /**
  * Servlet implementation class CarrinhoController

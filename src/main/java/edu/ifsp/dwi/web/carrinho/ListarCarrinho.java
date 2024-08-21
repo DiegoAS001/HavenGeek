@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.ifsp.dwi.modelo.Carrinho;
-import edu.ifsp.dwi.modelo.Cliente;
 import edu.ifsp.dwi.persistencia.CarrinhoDAO;
-import edu.ifsp.dwi.persistencia.ClienteDAO;
 import edu.ifsp.dwi.web.Command;
 import edu.ifsp.dwi.web.templates.Template;
 
