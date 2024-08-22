@@ -1,31 +1,21 @@
 package edu.ifsp.dwi.web.cliente;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.ifsp.dwi.modelo.Cliente;
+import edu.ifsp.dwi.web.Command;
 import edu.ifsp.dwi.web.templates.Template;
 
-/**
- * Servlet implementation class CadastroCliente
- */
-@WebServlet("/CadastroCliente")
-public class CadastroCliente extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Template.render("cliente/cadastroCliente", request, response);
-	}
+public class CadastroCliente implements Command{
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		Cliente cliente = new Cliente();
+		
+		request.setAttribute("cliente", cliente);
+		Template.render("cadastroCliente", request, response);		
 	}
 
 }
