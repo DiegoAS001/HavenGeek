@@ -15,7 +15,7 @@ public class CadastroCliente implements Command{
 		Cliente cliente = new Cliente();
 		
 		request.setAttribute("cliente", cliente);
-		Template.render("cadastroCliente", request, response);		
+		Template.render("cliente/cadastroCliente", request, response);		
 	}
 
 }
