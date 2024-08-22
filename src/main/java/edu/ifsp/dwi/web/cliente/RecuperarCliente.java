@@ -16,7 +16,7 @@ public class RecuperarCliente implements Command{
 		int id = Integer.parseInt(request.getParameter("id"));
 		ClienteDAO dao = new ClienteDAO();
 		Cliente cliente = dao.buscarPeloId(id);
-		request.setAttribute("cleinte", cliente);
+		request.setAttribute("cliente", cliente);
 		Template.render("cliente/detalharCliente", request, response);
 		
 	}
