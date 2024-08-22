@@ -51,6 +51,12 @@ public class ClienteController extends HttpServlet {
 			case "/cliente/listarCliente":
 				cmd = new ListarCliente();
 				break;
+			case "/cliente/cadastroCliente":
+				cmd = new CadastroCliente();
+				break;
+			case "/cliente/salvarCliente":
+				cmd = new SalvarCliente();
+				break;
 		}
 		
 		return cmd;
