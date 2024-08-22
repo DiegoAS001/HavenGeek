@@ -25,6 +25,7 @@ public class SalvarCliente implements Command {
 		
 		ClienteDAO dao = new ClienteDAO();
 		dao.salvar(cliente);
+		response.sendRedirect("recuperar?id=" + cliente.getId());
 		
 		//response.sendRedirect("recuperar?id=" + cliente.getId());
 	}
