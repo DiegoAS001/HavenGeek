@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cliente</title>
-    <link rel="stylesheet" href="estilizacao.css">
 </head>
 <body>
 
@@ -12,7 +11,7 @@
         <h1>Cadastro de Cliente</h1>
         <h1>Insira os dados do Cliente</h1>
         
-        <form action="/submit" method="post" id="/cliente/salvarCliente">
+        <form  method="post" th:action="@{/cliente/salvarCliente}">
            
                 <legend>Informações do Cliente</legend>
                 
