@@ -9,13 +9,6 @@ use HavenGeek;
         ENDERECO VARCHAR2(200),
         USERNAME VARCHAR2(20) NOT NULL,
         PRIMARY KEY (ID)
-);
-
-    CREATE TABLE ACESSORIO (
-        ID INT NOT NULL AUTO_INCREMENT,
-        DESCRICAO VARCHAR2(200) NOT NULL,
-        PRECO DECIMAL(10,2) NOT NULL,
-        PRIMARY KEY (ID)
 );		
 
     CREATE TABLE JOGO (
@@ -33,11 +26,7 @@ use HavenGeek;
         ID_CLIENTE INT NOT NULL REFERENCES CLIENTE(ID),
         ID_JOGO INT REFERENCES JOGO(ID),
         ID_ACESSORIO INT REFERENCES ACESSORIO(ID),
-<<<<<<< HEAD
-        ID_JOGO INT REFERENCES JOGO(ID),
-        ID_ACESSORIO INT REFERENCES ACESSORIO(ID),
-=======
->>>>>>> 3968309 (Criando a classe CarrinhoDAO, ListarCarrinho, CarrinhoController, listarCarrinho.html (falta terminar o mapearlinha do CarrinhoDAO))
+        ID_JOGO INT REFERENCES JOGO(ID)
         PRIMARY KEY (ID) 
 );
 
