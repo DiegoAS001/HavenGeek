@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.ifsp.dwi.modelo.Acessorio;
 import edu.ifsp.dwi.modelo.Carrinho;
 import edu.ifsp.dwi.modelo.Jogo;
 
@@ -24,19 +23,13 @@ public class CarrinhoDAO {
                 ps.executeUpdate();
 
                 // Inserir itens do carrinho
-                ps = conn.prepareStatement("INSERT INTO CARRINHO (ID_CLIENTE, ID_JOGO, ID_ACESSORIO) VALUES (?, ?, ?);");
+                ps = conn.prepareStatement("INSERT INTO CARRINHO (ID_CLIENTE, ID_JOGO) VALUES (?, ?);");
                 for (Jogo jogo : carrinho.getJogos()) {
                     ps.setInt(1, carrinho.getCliente().getId());
                     ps.setInt(2, jogo.getId());
                     ps.executeUpdate();
                 }
-                for (Acessorio acessorio : carrinho.getAcessorios()) {
-                    ps.setInt(1, carrinho.getCliente().getId());
-                    ps.setInt(2, acessorio.getId());
-                    ps.executeUpdate();
-                }
 
-               
                 conn.commit();
             } catch (SQLException e) {
                 conn.rollback();
@@ -56,7 +49,7 @@ public class CarrinhoDAO {
 			
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(
-					"SELECT id, id_cliente, id_jogo, id_acesorio FROM carrinho;");
+					"SELECT id, id_cliente, id_jogo FROM carrinho;");
 			
 			while(rs.next()) {
 				Carrinho carrinho = mapearLinha(rs);

@@ -16,7 +16,7 @@ import edu.ifsp.dwi.web.ControllerHelper;
 /**
  * Servlet implementation class CarrinhoController
  */
-@WebServlet("/CarrinhoController")
+@WebServlet("/carrinho/*")
 public class CarrinhoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	   
@@ -48,7 +48,7 @@ public class CarrinhoController extends HttpServlet {
 		
 		Command cmd = null;
 		switch (operation) {
-			case "/jogo/listarJogo":
+			case "/carrinho/listarCarrinho":
 				cmd = new ListarCarrinho();
 				break;
 				

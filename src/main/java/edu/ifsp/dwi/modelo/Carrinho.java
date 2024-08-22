@@ -15,15 +15,10 @@ public class Carrinho extends Entity {
 	
 	
 	private List<Jogo> jogos = new ArrayList<>();
-	private List<Acessorio> acessorios = new ArrayList<>();
 	private Cliente cliente;
 	
 	public List<Jogo> getJogos() {
 		return Collections.unmodifiableList(jogos);
-	}
-	
-	public List<Acessorio> getAcessorios() {
-		return Collections.unmodifiableList(acessorios);
 	}
 	
 	public Cliente getCliente() {
@@ -38,8 +33,8 @@ public class Carrinho extends Entity {
 		jogos.add(jogo);
 	}
 	
-	public void adicionarAcessorio(Acessorio acessorio) {
-		acessorios.add(acessorio);
+	public int tamanhoCarrinho() {
+		return jogos.size();
 	}
 		
 }
