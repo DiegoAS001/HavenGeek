@@ -25,11 +25,7 @@
                 <li th:each="jogo : ${carrinho.jogos}" th:text="${jogo.nome}">Nome do Jogo</li>
             </ul>
         </td>
-        <td>
-            <ul>
-                <li th:each="acessorio : ${carrinho.acessorios}" th:text="${acessorio.nome}">Nome do Acessório</li>
-            </ul>
-        </td>
+        
         <td>
             <!-- Formulário para editar o carrinho -->
             <form th:action="@{/editarCarrinho}" method="get" style="display:inline;">
