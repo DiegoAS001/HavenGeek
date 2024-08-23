@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.ifsp.dwi.modelo.Carrinho;
+import edu.ifsp.dwi.modelo.Cliente;
 import edu.ifsp.dwi.modelo.Jogo;
 
 public class CarrinhoDAO {
@@ -42,33 +43,42 @@ public class CarrinhoDAO {
         return carrinho;
     }
 	
-	public List<Carrinho> listarTodos(){
-		List<Carrinho> carrinhos = new ArrayList<Carrinho>();
+	public Carrinho buscaCarrinhoParaUsuario(Cliente cliente) throws Exception{
+		if ( cliente == null) {
+			throw new IllegalArgumentException();
+		}
+		
+		Carrinho carrinho = new Carrinho();
+		carrinho.setCliente(cliente);
 		
 		try (Connection conn = DatabaseConnector.connect()) {
 			
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(
-					"SELECT id, id_cliente, id_jogo FROM carrinho;");
+			String query = "SELECT c.nome,\r\n"
+					+ "       j.nome,\r\n"
+					+ "       j.id\r\n"
+					+ "FROM   carrinho car,\r\n"
+					+ "       jogo j,\r\n"
+					+ "       cliente c\r\n"
+					+ "WHERE  car.id_jogo = j.id\r\n"
+					+ "       AND car.id_cliente = c.id\r\n"
+					+ "       AND car.id_cliente = ?;";
 			
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setInt(1, cliente.getId());
+			ResultSet rs = ps.executeQuery();
+			
+			JogoDAO dao = new JogoDAO();
 			while(rs.next()) {
-				Carrinho carrinho = mapearLinha(rs);
-				carrinhos.add(carrinho);
+				int jogoId = rs.getInt("j.id");
+				Jogo jogo = dao.buscarPeloId(jogoId);
+				carrinho.adicionarJogo(jogo);
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return carrinhos;
+		return carrinho;
 	}
 	
-	
-	private Carrinho mapearLinha(ResultSet rs) throws SQLException {
-		Carrinho carrinho = new Carrinho();
-		
-		carrinho.setId(rs.getInt("id"));
-		
-		return carrinho;		
-	}	
 }
