@@ -6,15 +6,7 @@ import java.util.List;
 
 public class Carrinho extends Entity {
 	
-	/*LEMBRAR DE IMPLEMENTAR 
-	 * 
-	 * REMOVER ITEM
-	 * ESVAZIAR CARRINHO
-	 * VALOR TOTAL
-	 * */
-	
-	
-	private List<Jogo> jogos = new ArrayList<>();
+	private List<Jogo> jogos = new ArrayList<Jogo>();
 	private Cliente cliente;
 	
 	public List<Jogo> getJogos() {
@@ -36,5 +28,22 @@ public class Carrinho extends Entity {
 	public int tamanhoCarrinho() {
 		return jogos.size();
 	}
+	
+	public double valorTotalCarrinho() {
+		double total = 0;
 		
+		for(Jogo jogo : jogos) {
+			total += jogo.getPreco();
+		}
+		
+		return total;
+	}
+	
+	public boolean isVazio() {
+		return jogos.isEmpty();
+	}
+	
+	public void esvaziarCarrinho() {
+		jogos = new ArrayList<Jogo>();
+	}
 }
